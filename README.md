@@ -1,10 +1,10 @@
 # zao-voice-assistance
 
-It can send emails on your behalf.
-It can play music 
-It can do Wikipedia searches
-It is capable of opening websites like Google, Youtube, etc., in a web browser.
-It is capable of opening your code editor or IDE with a single voice command.
+It can send emails on your behalf.\n
+It can play music \n
+It can do Wikipedia searches\n
+It is capable of opening websites like Google, Youtube, etc., in a web browser.\n
+It is capable of opening your code editor or IDE with a single voice command.\n
 
 MODULES :
 1) pyttsx3 : 
@@ -20,7 +20,8 @@ MODULES :
    (pip install wikipedia)
 6) web browser: To perform Web Search. This module comes buit-in with Python. 
 7) os : The OS module in Python provides functions for interacting with the operating system. OS comes under Python’s standard utility modules.
-
+8) Pyjokes : Pyjokes is used for collection Python Jokes over the Internet. To install this module type the below command in the terminal.
+pip install pyjokes.
 
 CODE:
 
