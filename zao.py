@@ -6,6 +6,7 @@ import wikipedia
 import webbrowser
 import os
 import PyInstaller
+import pyjokes
 
 
 engine = pyttsx3.init('sapi5')
@@ -30,7 +31,7 @@ def wishMe():
     else:
         speak("Good Evening!")
 
-    speak("I am Zago. Please tell me how may I help you")
+    speak("I am Hanupa Tundup. Please tell me how may I help you , I can assist you with web browser , date and time , playing music ,telling jokes, wikipedia searches , opening social media and sending e mails ")
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
@@ -78,6 +79,9 @@ if __name__ == "__main__":
 
         elif "how are you" in query:
             speak('I am good , how are you ')
+        
+        elif 'fine' in query or "good" in query:
+            speak("It's good to know that your fine")
 
         elif 'open facebook' in query:
             webbrowser.open("facebook.com")
@@ -88,11 +92,15 @@ if __name__ == "__main__":
         elif 'google' in query:
             webbrowser.open("google.com")
 
+        elif 'joke' in query:
+            speak(pyjokes.get_joke())
+
         elif 'play music' in query:
             music_dir="C:\\Users\\tseta\\OneDrive\\Desktop\\music"
             songs = os.listdir(music_dir)
             print(songs)
             os.startfile(os.path.join(music_dir,songs[0]))
+
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"The time is {strTime}")
@@ -101,7 +109,8 @@ if __name__ == "__main__":
             webbrowser.open("flipkart.com")
 
 
-        elif 'quit' in query:
+        elif 'quit' in query or 'exit' in query:
+            speak("Thanks for giving me your time")
             quit()
 
         else:
