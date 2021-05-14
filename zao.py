@@ -31,7 +31,7 @@ def wishMe():
     else:
         speak("Good Evening!")
 
-    speak("I am Hanupa Tundup. Please tell me how may I help you , I can assist you with web browser , date and time , playing music ,telling jokes, wikipedia searches , opening social media and sending e mails ")
+    speak("I am zago. Please tell me how may I help you , I can assist you with web browser , date and time , playing music ,telling jokes, wikipedia searches , opening social media and sending e mails ")
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
