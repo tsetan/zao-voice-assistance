@@ -1,23 +1,22 @@
-import pyttsx3 #pip install pyttsx3
-import speech_recognition as sr #pip install speechRecognition
-import datetime
-import win32api
-import wikipedia
-import webbrowser
-import os
-import PyInstaller
-import pyjokes
+import pyttsx3 #convert text to speech
+import speech_recognition as sr #convert speech to text
+import datetime #date and time
+import win32api # have to import with pyttsx3 if on windows 
+import wikipedia # wikipedia searches 
+import webbrowser #browser
+import os #operating system
+import pyjokes #python jokes
 
 
-engine = pyttsx3.init('sapi5')
-voices = engine.getProperty('voices')
-# print(voices[1].id)
-engine.setProperty('voice', voices[0].id)
+engine = pyttsx3.init('sapi5') # init function to get an engine instance for the speech synthesis
+                               #sapi5 is Microsoft speech application platform interface we will be using this for text to speech function.
+voices = engine.getProperty('voices')  # 0 for male , 1 for female
+engine.setProperty('voice', voices[0].id) # setting voice
 
 
-def speak(audio):
-    engine.say(audio)
-    engine.runAndWait()
+def speak(audio): #function called speak()
+    engine.say(audio) # text po zer nok speak() na de kan bo
+    engine.runAndWait() # run and wait method, it processes the voice commands.
 
 
 def wishMe():
@@ -31,16 +30,17 @@ def wishMe():
     else:
         speak("Good Evening!")
 
-    speak("I am zago. Please tell me how may I help you , I can assist you with web browser , date and time , playing music ,telling jokes, wikipedia searches , opening social media and sending e mails ")
+    speak("I am zago . Please tell me how may I help you , I can assist you with web browser , date and time , playing music ,telling jokes, wikipedia searches , opening social media and sending e mails ")
 
-def takeCommand():
-    #It takes microphone input from the user and returns string output
+def takeCommand():  #It takes microphone input from the user and returns string output
+  ''' takeCommand() function,  awill return a string output by taking microphone input from the user.
+      Before defining the takeCommand() function, we need to install a module called speechRecognition'''
 
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
+    r = sr.Recognizer() # helps to recognize the audio
+    with sr.Microphone() as source: #using microphone as source
         print("Listening...")
-        r.pause_threshold = 1
-        audio = r.listen(source)
+        r.pause_threshold = 1   # seconds of non-speaking audio before a phrase is considered complete
+        audio = r.listen(source) # functions from speech recognisation
 
     try:
         print("Recognizing...")
