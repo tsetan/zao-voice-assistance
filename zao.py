@@ -9,7 +9,7 @@ import pyjokes #python jokes
 
 
 engine = pyttsx3.init('sapi5') # init function to get an engine instance for the speech synthesis
-                               #sapi5 is Microsoft speech application platform interface we will be using this for text to speech function.
+#sapi5 is Microsoft speech application platform interface we will be using this for text to speech function.
 voices = engine.getProperty('voices')  # 0 for male , 1 for female
 engine.setProperty('voice', voices[0].id) # setting voice
 
@@ -29,14 +29,13 @@ def wishMe():
 
     else:
         speak("Good Evening!")
-
-    speak("I am zago . Please tell me how may I help you , I can assist you with web browser , date and time , playing music ,telling jokes, wikipedia searches , opening social media and sending e mails ")
+    print("I am zago . Please tell me how may I help you , I can assist you with Web browser \nTime \nPlaying music \nTelling jokes \nWikipedia searches \nOpening social media ")
+    speak("I am zago . Please tell me how may I help you , I can assist you with web browser , date and time , playing music ,telling jokes, wikipedia searches , opening social media ")
 
 def takeCommand():  #It takes microphone input from the user and returns string output
-  ''' takeCommand() function,  awill return a string output by taking microphone input from the user.
-      Before defining the takeCommand() function, we need to install a module called speechRecognition'''
-
-    r = sr.Recognizer() # helps to recognize the audio
+    ''' takeCommand() function,  awill return a string output by taking microphone input from the user.
+    Before defining the takeCommand() function, we need to install a module called speechRecognition'''
+    r = sr.Recognizer()  #helps to recognize the audio
     with sr.Microphone() as source: #using microphone as source
         print("Listening...")
         r.pause_threshold = 1   # seconds of non-speaking audio before a phrase is considered complete
@@ -53,13 +52,7 @@ def takeCommand():  #It takes microphone input from the user and returns string 
         return "None"
     return query
 
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.ehlo()
-    server.starttls()
-    server.login('youremail@gmail.com', 'your-password')
-    server.sendmail('youremail@gmail.com', to, content)
-    server.close()
+
 
 if __name__ == "__main__":
     wishMe()
@@ -115,4 +108,5 @@ if __name__ == "__main__":
 
         else:
             speak("sorry please say it again")
+
 
