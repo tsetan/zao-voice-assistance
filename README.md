@@ -25,12 +25,12 @@ pip install pyjokes.
 
 CODE:
 
-What is sapi5?
+sapi5 :
 
 Microsoft developed speech API.
 Helps in synthesis and recognition of voice.
 
-What Is VoiceId?
+VoiceId :
 
 Voice id helps us to select different voices.
 voice[0].id = Male voice 
