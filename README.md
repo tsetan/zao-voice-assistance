@@ -12,7 +12,7 @@ MODULES :
    It works offline, and it is compatible with Python 2 as well as Python 3.
    (pip install pyttsx3)
    
-2) pypiwin32 : incase pyttsx3 is not able to install .
+2) pypiwin32 : if on windows .
 3) speech_recognition : allow us to convert audio into text
    (pip install speech_recognition 
 4) datetime : Date and Time is used to showing Date and Time. This module comes built-int with Python.
